@@ -31,7 +31,7 @@
 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 toggel-button-padd">
                        
-                        <div class="navbar-collapse">
+                       <div class="navbar-collapse">
                             <ul class="navbar-nav">
                                 <li class="nav-item active">
                                     <h2>Administrator page</h2>
@@ -134,48 +134,50 @@
 												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text English-btn" value="English">
 											</div>
 										</div>
-										<div class="form-group">
-											<div class="input-f edit-result">
-												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text Korean-btn" value="Parking">
-												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text English-btn" value="Parking">
-											</div>
-											<div class="order-img">
-												  <img src="images/3479.png">
-											  </div>
-										</div>
-										<div class="form-group">
-											<div class="input-f edit-result">
-												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text Korean-btn" value="Live Music">
-												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text English-btn" value="Live Music">
-											</div>
-											<div class="order-img">
-												  <img src="images/3479.png">
-											  </div>
-										</div>
-										<div class="form-group">
-											<div class="input-f edit-result">
-												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text Korean-btn" value="Pets">
-												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text English-btn" value="Pets">
-											</div>
-											<div class="order-img">
-												  <img src="images/3479.png">
-											  </div>
-										</div>
-										<div class="form-group">
-											<div class="input-f edit-result">
-												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text Korean-btn" value="Wine">
-												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text English-btn" value="Wine">
-											</div>
-											<div class="order-img">
-												  <img src="images/3479.png">
-											  </div>
-										</div>
-										<div class="form-group">
-											<div class="input-f edit-result">
-												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text Korean-btn" value="+ Add new">
-												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text English-btn" value="+ Add new">
-											</div>
-										</div>
+                                        <div id="sortable">
+    										<div class="form-group">
+    											<div class="input-f edit-result">
+    												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text Korean-btn" value="Parking">
+    												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text English-btn" value="Parking">
+    											</div>
+    											<div class="order-img dragger">
+    												  <img src="images/3479.png">
+    											  </div>
+    										</div>
+    										<div class="form-group">
+    											<div class="input-f edit-result">
+    												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text Korean-btn" value="Live Music">
+    												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text English-btn" value="Live Music">
+    											</div>
+    											<div class="order-img dragger">
+    												  <img src="images/3479.png">
+    											  </div>
+    										</div>
+    										<div class="form-group">
+    											<div class="input-f edit-result">
+    												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text Korean-btn" value="Pets">
+    												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text English-btn" value="Pets">
+    											</div>
+    											<div class="order-img dragger">
+    												  <img src="images/3479.png">
+    											  </div>
+    										</div>
+    										<div class="form-group">
+    											<div class="input-f edit-result">
+    												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text Korean-btn" value="Wine">
+    												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text English-btn" value="Wine">
+    											</div>
+    											<div class="order-img dragger">
+    												  <img src="images/3479.png">
+    											  </div>
+    										</div>
+    										<div class="form-group">
+    											<div class="input-f edit-result">
+    												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text Korean-btn" value="+ Add new">
+    												<input type="submit" id="btn-login" class="btn btn-custom btn-lg cancel-profile-text English-btn" value="+ Add new">
+    											</div>
+    										</div>
+                                        </div>
 							</form>
                         </div>
 
@@ -210,9 +212,30 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+        $( function() {
+
+            $("#sortable").sortable({
+                axis: "y"
+            })
+
+            $( "#sortable" ).disableSelection();
+        });
+
+
+    </script>
+    <style>
+        .dragger {
+            cursor: grab;
+        }
+    </style>
 </body>
 
 </html>
