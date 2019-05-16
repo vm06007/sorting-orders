@@ -119,7 +119,7 @@
                         	<h2>Manage a Existing Blog</h2>
                             <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
                                        
-                                         <table class="responsive-table table">
+                                         <table class="responsive-table table" id="sortable">
                                               <thead>
                                                 <tr>
                                                   <th class="checkbox-w"><input type="checkbox" checked=""></th>
@@ -131,51 +131,51 @@
                                                   <th class="Order-w">Order</th>
                                                 </tr>
                                               </thead>
-                                              <tbody>
+                                              <tbody id="sortable">
                                                 <tr>
                                                   <th class="checkbox-w"><input type="checkbox"></th>
-                                                  <th class="number-w">1</th>
+                                                  <th class="number-w index">1</th>
                                                   <th class="Name-w">5 Best cafe Itaewon</th>
                                                   <th class="Created-w">04/22/2019</th>
                                                   <th class="update-w">04/22/2019</th>
                                                   <th class="URL-w"><input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Edit"></th>
-                                                  <th class="Order-w"><img src="images/3479.png"></th>
+                                                  <th class="Order-w dragger"><img src="images/3479.png"></th>
                                                 </tr>
                                                 <tr>
                                                  <th class="checkbox-w"><input type="checkbox"></th>
-                                                  <th class="number-w">2</th>
+                                                  <th class="number-w index">2</th>
                                                   <th class="Name-w">5 Best cafe Itaewon</th>
                                                   <th class="Created-w">04/22/2019</th>
                                                   <th class="update-w">04/22/2019</th>
                                                   <th class="URL-w"><input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Edit"></th>
-                                                  <th class="Order-w"><img src="images/3479.png"></th>
+                                                  <th class="Order-w dragger"><img src="images/3479.png"></th>
                                                 </tr>
                                                  <tr>
                                                  <th class="checkbox-w"><input type="checkbox"></th>
-                                                  <th class="number-w">3</th>
+                                                  <th class="number-w index">3</th>
                                                   <th class="Name-w">5 Best cafe Itaewon</th>
                                                   <th class="Created-w">04/22/2019</th>
                                                   <th class="update-w">04/22/2019</th>
                                                   <th class="URL-w"><input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Edit"></th>
-                                                  <th class="Order-w"><img src="images/3479.png"></th>
+                                                  <th class="Order-w dragger"><img src="images/3479.png"></th>
                                                 </tr>
                                                   <tr>
                                                  <th class="checkbox-w"><input type="checkbox"></th>
-                                                  <th class="number-w">4</th>
+                                                  <th class="number-w index">4</th>
                                                   <th class="Name-w">5 Best cafe Itaewon</th>
                                                   <th class="Created-w">04/22/2019</th>
                                                   <th class="update-w">04/22/2019</th>
                                                   <th class="URL-w"><input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Edit"></th>
-                                                  <th class="Order-w"><img src="images/3479.png"></th>
+                                                  <th class="Order-w dragger"><img src="images/3479.png"></th>
                                                 </tr>
                                                    <tr>
                                                  <th class="checkbox-w"><input type="checkbox"></th>
-                                                  <th class="number-w">5</th>
+                                                  <th class="number-w index">5</th>
                                                   <th class="Name-w">5 Best cafe Itaewon</th>
                                                   <th class="Created-w">04/22/2019</th>
                                                   <th class="update-w">04/22/2019</th>
                                                   <th class="URL-w"><input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Edit"></th>
-                                                  <th class="Order-w"><img src="images/3479.png"></th>
+                                                  <th class="Order-w dragger"><img src="images/3479.png"></th>
                                                 </tr>
                                               </tbody>
                                             </table>
@@ -218,9 +218,43 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+    $( function() {
+
+      $("#sortable").sortable({
+          axis: "y",
+          stop: updateIndex
+      })
+
+      $('#sortable th').not('.dragger').mousedown(function(event){
+          event.stopImmediatePropagation();
+      })
+
+      $( "#sortable" ).disableSelection();
+    } );
+
+    var updateIndex = function(e, ui) {
+        $('th.index', ui.item.parent()).each(function (i) {
+            $(this).html(i + 1);
+        });
+    };
+
+
+    </script>
+    <style>
+      #form-12 table.responsive-table th,
+      #form-12 table.responsive-table th.index {
+        text-align: center;
+      }
+    </style>
 </body>
 
 </html>
