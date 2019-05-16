@@ -126,45 +126,47 @@
 									 		<div class="width30 floatR input-f cancel-btn"><input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Edit"></div>
 									 		<div class="width30 floatR input-f confirm-btn"><input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block save-profile-text" value="Confirm"></div>
 									 	</div><br>
+                                    <div id="sortable">    
                                         <div class="form-group">
-                                        <div class="input-f edit-result">
-                                            <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Bussiness Results">
+                                            <div class="input-f edit-result">
+                                                <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Bussiness Results">
+                                            </div>
+                                            <div class="order-img dragger">
+                                                  <img src="images/3479.png">
+                                              </div>
                                         </div>
-                                        <div class="order-img">
-                                              <img src="images/3479.png">
-                                          </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-f edit-result">
-                                            <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="WYA Deal Results">
+                                        <div class="form-group">
+                                            <div class="input-f edit-result">
+                                                <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="WYA Deal Results">
+                                            </div>
+                                            <div class="order-img dragger">
+                                                  <img src="images/3479.png">
+                                              </div>
                                         </div>
-                                        <div class="order-img">
-                                              <img src="images/3479.png">
-                                          </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-f edit-result">
-                                            <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Video Results">
+                                        <div class="form-group">
+                                            <div class="input-f edit-result">
+                                                <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Video Results">
+                                            </div>
+                                            <div class="order-img dragger">
+                                                  <img src="images/3479.png">
+                                              </div>
                                         </div>
-                                        <div class="order-img">
-                                              <img src="images/3479.png">
-                                          </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-f edit-result">
-                                            <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Blog Results">
+                                        <div class="form-group">
+                                            <div class="input-f edit-result">
+                                                <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Blog Results">
+                                            </div>
+                                            <div class="order-img dragger">
+                                                  <img src="images/3479.png">
+                                              </div>
                                         </div>
-                                        <div class="order-img">
-                                              <img src="images/3479.png">
-                                          </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-f edit-result">
-                                            <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Review Results">
+                                        <div class="form-group">
+                                            <div class="input-f edit-result">
+                                                <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block cancel-profile-text" value="Review Results">
+                                            </div>
+                                            <div class="order-img dragger">
+                                                  <img src="images/3479.png">
+                                              </div>
                                         </div>
-                                        <div class="order-img">
-                                              <img src="images/3479.png">
-                                          </div>
                                     </div>
                         </div>
 
@@ -199,9 +201,31 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+        $( function() {
+
+            $("#sortable").sortable({
+                axis: "y"
+            })
+
+            $( "#sortable" ).disableSelection();
+        });
+
+
+    </script>
+    <style>
+        .dragger {
+            cursor: grab;
+        }
+    </style>
+
 </body>
 
 </html>
